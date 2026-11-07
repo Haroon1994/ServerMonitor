@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: servermonitor-db
+    environment:
+      POSTGRES_DB: servermonitor
+      POSTGRES_USER: monitor
+      POSTGRES_PASSWORD: monitor123
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
